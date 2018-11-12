@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	    <title>美食</title>
+	    <link rel="stylesheet" href="{CSS_PATH}cate.css"/>
+	    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_803380_o59quw6jbz.css
+"/>
+	    <script type="text/javascript"  src="{JS_PATH}rem.js" ></script>
+        <script src="{JS_PATH}jquery.js"></script>
+        <script src="{JS_PATH}iscroll-probe.js"></script>
+        <script src="{JS_PATH}cate.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="javascript:history.back();"><i class="iconfont icon-fanhui"></i></a>
+			<h1>{$currentCate['title']}</h1>
+			<i></i>
+		</header>
+		<div class="sroll">
+			<ul class="sp-list">
+				<li cid="0">全部</li>
+				{foreach $sonCate as $v}
+				<li cid="{$v['cid']}">{$v['title']}</li>
+                {/foreach}
+
+			</ul>
+		</div>
+        <div class="title">
+            <ul class="tt">
+                <li class="hot" type="id">综合排序</li>
+                <li type="score">好评优先</li>
+                <li type="sale">销量</li>
+                <li type="fee">筛选</li>
+            </ul>
+        </div>
+		<div class="list">
+            <div class="wrapper">
+                <div class="scrollUp" style="display: none;"> 
+                    <i class="iconfont icon-jiazai"></i>
+                    <span>正在加载...</span>
+                </div>
+		        <ul class="store"></ul>
+                <div class="scrollDown" style="display: none;">
+                    <i class="iconfont icon-jiazai"></i>
+                    <span>正在加载...</span>
+                </div>
+            </div>
+        </div>
+		<div class="loadBox">
+			<div class="loadimg"></div>
+		</div>
+	</body>
+</html>

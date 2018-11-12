@@ -1,0 +1,257 @@
+@import url("base.css");
+
+body::-webkit-scrollbar{
+	width: 0;
+	height: 0;
+}
+header{
+	width: 100%;
+	height: .88rem;
+	display: flex;
+	background: -webkit-linear-gradient(left, #f8bf44,#fcfa38);
+	align-items: center;
+}
+header > a{
+	display: flex;
+	height: 100%;
+	line-height: .88rem;
+}
+header > a > i{
+	font-size:.32rem ;
+	color: white;
+	margin-left: .1rem;
+}
+header > h1{
+	width: 20%;
+	height: 100%;
+	line-height: .88rem;
+	text-align: center;
+	margin-left: 2.6rem;
+	font-size:.32rem ;
+	color: white;
+}
+.sroll{
+	width: 100%;
+	height: 1rem;
+	background: -webkit-linear-gradient(left, #f8bf44,#fcfa38);
+	overflow: hidden;
+	overflow-x: scroll;
+}
+.sroll::-webkit-scrollbar{
+	width: 0;
+}
+.sp-list{
+	height: 1rem;
+	display: flex;
+	padding-left: .25rem;
+	align-items: center;
+	white-space: nowrap;
+	font-size: .24rem;
+	color: white;
+	
+}
+.sp-list > li{
+	display:inline-block;
+    margin-right :.3rem;
+}
+/*四个方向*/
+.list{
+	position: absolute;
+	width: 100%;
+	top:2.38rem;
+	bottom: 0;
+    left: 0;
+	overflow: hidden;
+}
+.title ul{
+	width: 7rem;
+	height: .5rem;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.title > ul > li{
+	display:block;
+	width: 25%;
+	height: .5rem;
+	line-height: .5rem;
+	text-align: center;
+	float: left;
+    font-size: 0.2rem;
+}
+.title > ul >li.hot{
+    color: #009688;
+}
+.title ul > li > a{
+	display:block;
+	width: 100%;
+	height: .5rem;
+	font-size:.3rem ;
+	color: #979696 ;
+}
+.tt > li.hot > a{
+	color: #6f6e6e;
+}
+.store{
+	width: 100%;
+	height: auto;
+	border-top: 0.01rem solid #E6E6E6;
+}
+.store > li{
+   position: relative;
+   width: 7rem;
+   height: 2.5rem;
+   background-color: #ffffff;
+   margin-top: .3rem;
+   margin-left: .24rem;
+   border-radius: .2rem;
+}
+.store > li > a{
+	position: absolute;
+	width: 20%;
+	height: 1.5rem;
+	margin:.5rem 0.16rem;
+}
+.store > li > a > img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.right{
+	width: 70%;
+	height: 2rem;
+	float: right;
+	margin-top: .3rem;
+	margin-right: .1rem;
+}
+.right > h4{
+	height: .3rem;
+	font-size:.3rem ;	
+}
+.right > span{
+	display: flex;
+	width: 100%;
+	height: .3rem;
+	font-size: .24rem;
+	color: #a3a3a3;
+    align-items: center;
+    margin-top: .13rem;
+}
+.right > span > .star{
+	position: relative;
+	width: 30%;
+	height:.24rem;
+}
+.star .starGray {
+	width: 100%;
+	height: 100%;
+}
+.star .starGray > img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.46rem;
+	height:.24rem;
+}
+.star .star5  {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: .24rem;
+	overflow: hidden;
+}
+.star .star5  > img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.46rem;
+	height:.24rem;
+}
+.right .count,.distance,.free{
+	width:1.2rem;
+	height: 100%;
+	margin-left: .5rem;
+}
+.preferential{
+	margin-left:8px;
+}
+.sp{
+	display: flex;
+	width: .8rem;
+	font-size: .24rem;
+	align-items: center;
+	justify-content: center;
+	background-color: #fdd8e5;
+	color: #fc8fb5;
+}
+.sd{
+	display: flex;
+	width: .8rem;
+	align-items: center;
+	justify-content: center;
+	background-color: #d8f2fe;
+	color: #81cff8;
+}
+
+.wrapper{
+    position: absolute;
+    width: 100%;
+}
+.scrollDown , .scrollUp{
+    width: 100%;
+    height: 0.3rem;
+    text-align: center;
+    line-height: 0.3rem;
+    padding: 0.1rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 0.2rem;
+}
+.scrollUp i , .scrollDown i{
+    color: #000;
+	display: inline-block;
+	animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+	from{
+	   transform: rotateZ(0deg);
+	}
+	to{
+		transform: rotateZ(360deg);
+	}
+
+}
+
+.loadBox{
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+	background: rgba(0,0,0,0.8);
+	justify-content: center;
+	align-items: center;
+    display: none;
+}
+
+.loadBox > .loadimg{
+	width: 2rem;
+	height: 2rem;
+	background: url("../images/load.png") no-repeat ;
+    background-size: auto 100%;
+	animation: bgmove 1.5s infinite steps(43);
+}
+
+@keyframes bgmove {
+	from{
+		background-position-x:  0;
+	}
+	to{
+	   background-position-x: 100%;
+	}
+}

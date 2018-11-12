@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="jquery.js"></script>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    $.fn.extend({
+        aa:function(){
+            console.log('aa');
+            return this;
+        }
+    })
+
+    $.extend({
+        bb:function(){
+            console.log('bb');
+        }
+    })
+
+    $('.box').aa();
+
+    $.bb();
+</script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}swiper-4.4.1.min.css"/>
+    <link rel="stylesheet" href="{CSS_PATH}index.css"/>
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_803380_9bt5gt9s86w.css"/>
+    <script type="text/javascript" src="{JS_PATH}rem.js"></script>
+</head>
+<body>
+<div class="position">
+    <i class="iconfont icon-dingweiweizhi"></i>
+    <h4>山西省朔州市</h4>
+    <div class="input-search">
+        <a href="search.html"><i class="iconfont icon-sousuo"> </i></a>
+    </div>
+</div>
+
+<!--中间-->
+<div class="main">
+    <div class="swiper-container lxCate">
+        <div class="swiper-wrapper">
+            {for $i=0 to $number}
+            {assign var=foo value=$i*8+7}
+            {if $foo > count($cate)-1}
+            {$foo = count($cate)-1}
+            {/if}
+            <div class="swiper-slide">
+                <ul class="select">
+                    {for $j=$i*8 to $foo}
+                    <li>
+                        <a href="/sdk/index.php/food?cid={$cate[$j]['cid']}">
+                            <img src="{$cate[$j]['thumb']}" alt=""/>
+                            <p>{$cate[$j]['title']}</p>
+                        </a>
+                    </li>
+                    {/for}
+                </ul>
+            </div>
+            {/for}
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div><!--左箭头-->
+        <div class="swiper-button-next"></div><!--右箭头-->
+    </div>
+
+    <!--分类-->
+
+    <div class="lxHr" style="height: 0.5rem;background: #ffffff"></div>
+
+    <div class="swiper-container ad" style="border-radius: 10px;">
+        <div class="swiper-wrapper box">
+            <div class="swiper-slide li"><a href="#"><img src="{IMG_PATH}ban.png"/></a></div>
+
+            <div class="swiper-slide li"><a href="#"><img src="{IMG_PATH}l.png"/></a></div>
+
+        </div>
+        <!--Add Pagination-->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!--商家店铺-->
+    <div class="sj">
+        <div class="sj-l">
+            <span class="name1"></span>
+            <span class="name2"></span>
+            <span class="name3"></span>
+            <span class="name4"></span>
+        </div>
+        <div class="sj-c">
+            <span class="name1">商家店铺</span>
+            <span class="name2">RECOMEDE FOOD</span>
+        </div>
+        <div class="sj-r">
+            <span class="name1"></span>
+            <span class="name2"></span>
+            <span class="name3"></span>
+            <span class="name4"></span>
+        </div>
+    </div>
+    <!--四种方向-->
+    <div class="title">
+        <ul class="tt">
+            <li class="hot"><a href="#">综合排序</a></li>
+            <li><a href="#">好评优先</a></li>
+            <li><a href="#">距离最近</a></li>
+            <li><a href="#">筛选<i class="iconfont icon-shaixuan"></i></a></li>
+        </ul>
+    </div>
+    <!--店铺-->
+    <div class="wrapper">
+    <ul class="store">
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div>
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div> 
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div> 
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="./img/stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="./img/star-yellow.png"/>
+							</div>
+						</div> 
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+        <li>
+            <a href="choose.html"><img src="{IMG_PATH}row.png"/></a>
+            <div class="right">
+                <h4>牛奶蛋糕</h4>
+                <span>
+		   	  			<div class="star">
+							<div class="starGray">
+								<img src="{IMG_PATH}stargray.png"/>
+							</div>
+							<div class="star5" style="width: 60%;">
+								<img src="{IMG_PATH}star-yellow.png"/>
+							</div>
+						</div> 
+						<p class="count">月销售198</p> <p class="distance">1.0KM</p></span>
+                <span><p class="send">起送¥25</p> <p class="free">配送免费</p></span>
+                <span><span class="sp">满减</span><p class="preferential">满70减22,满168减55,满399...</p></span>
+                <span><span class="sd">首单</span><p class="preferential">新用户下单减88</p></span>
+            </div>
+        </li>
+    </ul>
+    </div>
+</div>
+<!--底部-->
+<div class="footer">
+    <ul>
+        <li class="hot">
+            <a href="#">
+                <i class="iconfont icon-shouye1"></i>
+            </a>
+            <p>首页</p>
+        </li>
+        <li>
+            <a href="#">
+                <i class="iconfont  icon-yanjing"></i>
+            </a>
+            <p>发现</p>
+        </li>
+        <li>
+            <a href="order.html">
+                <i class="iconfont icon-order"></i>
+            </a>
+            <p>订单</p>
+        </li>
+        <li>
+            <a href="my.html">
+                <i class="iconfont icon-wode1"></i>
+            </a>
+            <p>我的</p>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>
+<script src="{JS_PATH}jquery.js"></script>
+<script src="{JS_PATH}swiper-4.4.1.min.js"></script>
+<script src="{JS_PATH}iscroll-probe.js"></script>
+<script src="{JS_PATH}index.js"></script>

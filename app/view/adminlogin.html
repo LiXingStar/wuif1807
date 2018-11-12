@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>送的快后台登陆</title>
+    <link rel="stylesheet" href="{CSS_PATH}layui.css">
+    <link rel="stylesheet" href="{CSS_PATH}adminlogin.css">
+</head>
+<body>
+<div class="box">
+    <h2>sdk(cms)后台登陆</h2>
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-icon layui-icon-username"></label>
+            <div class="layui-input-block">
+                <input type="text" name="username" required  lay-verify="required|username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-icon layui-icon-password"></label>
+            <div class="layui-input-block">
+                <input type="password" name="password" required lay-verify="required|password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="{LAYUIJS_PATH}layui.all.js"></script>
+<script src="{JS_PATH}adminlogin.js"></script>
+</body>
+</html>

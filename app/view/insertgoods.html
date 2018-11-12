@@ -1,0 +1,86 @@
+{include file='header.html'}
+<link rel="stylesheet" href="{CSS_PATH}insertcate.css">
+    <div class="layui-side layui-bg-black">
+       {include file='slide.html'}
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <form class="layui-form" lay-filter="test2">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所属店铺</label>
+                    <div class="layui-input-block">
+                        <select name="sid" lay-filter="shop">
+                            {foreach $types as $key=>$v}
+                            <option value="{$v['id']}"> {$v['sname']} </option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所属食品分类</label>
+                    <div class="layui-input-block">
+                        <select name="gid" lay-filter="aihao">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">食品名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" placeholder="请输入食品名称" autocomplete="off" class="layui-input" required lay-verify="required">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">食品描述</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="des" placeholder="食品描述" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">原价</label>
+                    <div class="layui-input-block">
+                        <input type="number" name="price" placeholder="原价" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">折扣价</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="discount" placeholder="折扣价" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">上传缩略图</label>
+                    <button type="button" class="layui-btn" id="test1">
+                        <i class="layui-icon">&#xe67c;</i>上传图片
+                    </button>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"></label>
+                    <ul class="imgBox">
+
+                    </ul>
+                </div>
+                <input type="hidden" name="thumb" >
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="submit">立即提交</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="layui-footer">
+       版权属于我
+    </div>
+</div>
+<script src="{LAYUIJS_PATH}layui.all.js"></script>
+<script src="{JS_PATH}insertgoods.js"></script>
+
+</body>
+</html>

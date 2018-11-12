@@ -1,0 +1,49 @@
+html , body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+::-webkit-input-placeholder{
+    color: #e6e6e6;
+}
+
+.box{
+    width: 400px;
+    height: auto;
+    /*border: 1px solid #009688;*/
+    padding: 15px 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px  rgba(0,0,0,0.2);
+}
+.box > h2{
+    text-align: center;
+    line-height: 4;
+}
+.layui-form-item{
+    position: relative;
+}
+.layui-form-item > .layui-icon{
+    color: #E6E6E6;
+}
+.layui-form-item > .layui-form-label{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 0;
+}
+.layui-form-item > .layui-input-block{
+    margin-left: 0;
+}
+.layui-input {
+    padding-left: 40px;
+}
+.layui-btn{
+    width: 100%;
+}

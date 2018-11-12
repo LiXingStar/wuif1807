@@ -1,0 +1,86 @@
+@import url("base.css");
+.success{
+	width: 100%;
+	height: 10.34rem;
+	position: relative;
+}
+.success img{
+	width: 100%;
+}
+.success h1{
+	position: absolute;
+	width: 100%;
+	height: .5rem;
+	font-size: .48rem;
+	text-align: center;
+	color: white;
+	top: 2.37rem;	
+}
+.success span {
+	position: absolute;
+	width: 100%;
+	height: .5rem;
+	font-size: .32rem;
+	text-align: center;
+	color: white;
+	top: 3.24rem;
+}
+.success  p {
+	position: absolute;
+	width: 100%;
+	height: .5rem;
+	font-size: .38rem;
+	text-align: center;
+	color: white;
+	top: 3.86rem;
+}
+.img{
+	 position: absolute;
+	 width: 100%;
+	 height: 1rem;
+	 text-align: center;
+	 top: 5.42rem;
+}
+.success  .img > img{
+	width: 1.83rem;
+	height:1.64rem;
+}
+.btn{
+	width: 100%;
+	height: 3rem;
+	background-color: #f5f4f4;
+	border: 1px solid #f5f4f4;
+}
+.btn span{
+	display: flex;
+	width: 100%;
+	height: .6rem;
+	margin-top: 1.3rem;
+}
+.btn .one{
+	width: 1.8rem;
+	height:.6rem;
+	line-height:.6rem ;
+	text-align: center;
+	font-size: .24rem;
+	margin-left: 1.7rem;
+	border-radius: .1rem;
+	background-color: #f82e3d;
+}
+.btn .one > a{
+	color: white;
+}
+.btn .two{
+	width: 1.8rem;
+	height:.6rem;
+	line-height:.6rem ;
+	text-align: center;
+	font-size: .24rem;
+	margin-left: .5rem;
+	border-radius: .1rem;
+	background-color: #faa523;
+}
+.btn .two > a{
+	color: white;
+}
+

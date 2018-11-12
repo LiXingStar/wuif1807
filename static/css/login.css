@@ -1,0 +1,163 @@
+@import url("base.css");
+
+ img{
+	width: 100%;
+	height: 100%;
+}
+ .bc{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgba(255,200,0,0.8);	
+}
+ .bc .head{
+	width: 100%;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	margin-top: 1.2rem;
+}
+ .bc .head i{
+	font-size:2rem;
+	color: white;
+}
+ .bc .box{
+	width: 6rem;
+	height: 6.8rem;
+	background-color: white;
+	margin: .6rem auto;
+	border-radius: .3rem;
+	border: 1px solid white;
+	padding-top: .84rem;
+}
+ .bc .box .number{
+	width: 5rem;
+	height: .7rem;
+	border: 1px solid  #dcdcdc;
+	border-radius: .5rem;
+	margin-top: .4rem;
+	margin-left: .5rem;
+}
+ .bc .box .number .xtb{
+	width: 5%;
+	height: .1rem;
+	background-color: orange;
+	margin-top: .3rem;
+	border-radius: .5rem;
+	margin-left: .24rem;
+	float: left;
+}
+ .bc .box .number input{
+	width: 85%;
+	height: 100%;
+	float: left;
+	margin-left: .24rem;
+	border-radius:.5rem ;
+	border: none;
+	outline: none;
+	color: #dddddd;
+}
+ .bc .box .second{
+	width: 100%;
+	height: .7rem;
+	margin-top: .44rem;
+}
+ .bc .box .yzm{
+	width: 50%;
+	height: 100%;
+	border: 1px solid  #dcdcdc;
+	border-radius: .5rem;
+	margin-left: .5rem;
+	float: left;
+}
+ .bc .box .yzm .xtb{
+	width: 8%;
+	height: .1rem;
+	background-color: orange;
+	margin-top: .3rem;
+	border-radius: .5rem;
+	margin-left: .24rem;
+	float: left;
+}
+ .bc .box .yzm input{
+	width: 70%;
+	height: 100%;
+	float: left;
+	border-radius:.5rem ;
+	border: none;
+	outline: none;
+	color: #dddddd;
+	margin-left: .24rem;
+}
+ .bc .box .second .hq{
+	width: 30%;
+	height: 100%;
+	line-height: .7rem;
+	text-align: center;
+	font-size: .22rem;
+	color: white;
+	float:left;
+	margin-left: .2rem;
+	border-radius: .5rem;
+	border: none;
+	background: -webkit-linear-gradient(135deg, #f8a222,#ff5d3e);
+}
+ .bc .box .register{
+	width: 5rem;
+	height: .7rem;
+	border: none;
+	font-size: .28rem;
+	color: white;
+	margin-left: .5rem;
+	margin-top: .44rem;
+	background: -webkit-linear-gradient(135deg, #f8a222,#ff5d3e);
+	border-radius: .5rem;
+}
+ .bc .box .footer{
+	width: 5rem;
+	height: .28rem;
+	margin-left: .5rem;
+	margin-top: .44rem;
+	display: flex;
+	justify-content: space-between;
+}
+ .bc .box .footer span{
+	width: 50%;
+	height: 100%;
+	font-size: .26rem;
+	color: #dddddd;
+}
+ .bc .box .footer > a{
+	display: block;
+	width: 17%;
+	height: 100%;
+	font-size: .26rem;
+	color: #dddddd;
+}
+ .bc .way{
+	display: flex;
+	width: 100%;
+	height: .7rem;
+	justify-content: center;
+}
+ .bc .way > a {
+	height: .7rem;
+    height: .7rem;
+    /*background-color: white;*/
+}
+ .bc .way > a > i{
+	display: flex;
+	font-size:.7rem ;
+	margin-left: .25rem;
+}
+.bc .way .wx{
+	color: green;
+}
+ .bc .way .qq{
+	color: deeppink;
+}
+ .bc .way .wb{
+	color: yellow;
+}

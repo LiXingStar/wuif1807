@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/sdk/static/css/layui.css">
+</head>
+<body>
+<form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+    <div class="layui-form-item">
+        <label class="layui-form-label layui-icon layui-icon-username"></label>
+        <div class="layui-input-block">
+            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+</form>
+<script src="/sdk/static/layui.all.js"></script>
+<script>
+    let form  = layui.form;
+    form.on('select(aihao)',function(data){
+        console.log(data);
+    })
+</script>
+</body>
+</html>
