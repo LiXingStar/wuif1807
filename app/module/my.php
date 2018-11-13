@@ -79,7 +79,6 @@ class my extends main{
                     'msg'=>'手机号不存在'
                 ]);
             }
-
         }else{
             echo json_encode([
                 'code'=>1,

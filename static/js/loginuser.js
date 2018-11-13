@@ -11,7 +11,12 @@ $(function () {
             data:fd,
             dataType:'json',
             success:function(res){
-                console.log(res.msg);
+                if(location.search){
+                    let redirect = location.search.substring(location.search.indexOf('=')+1);
+                    location.href = '/sdk/index.php'+redirect;
+                }else{
+                    location.href='/sdk/index.php';
+                }
             }
         })
 

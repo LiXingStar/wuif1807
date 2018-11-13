@@ -5,6 +5,8 @@ $(function () {
     let list = null;
     let scrollright = null;
 
+
+    cancelCar();
     $.ajax({
         url: '/sdk/index.php/shop/detail',
         data: {sid: location.search.split('=')[1]},
@@ -84,25 +86,27 @@ $(function () {
         calcTotal();
         calcNumbers();
         renderCar(car.goods);
+        saveCar();
     });
 
 
-    scrollr.on('click','.jian',function(){
+    scrollr.on('click', '.jian', function () {
         let _this = $(this);
         let id = _this.closest('li').attr('id');
         let goodsinfo = JSON.parse(_this.closest('li').attr('data'));
         let data = car.goods.filter(ele => ele.id == id);
         let numbers = --data[0].numbers;
-        if(numbers){
+        if (numbers) {
             _this.next('.numbers').text(numbers);
-        }else{
-            _this.css('display','none').next('.numbers').css('display','none');
-            car.goods = car.goods.filter(ele=>ele.id != id)
+        } else {
+            _this.css('display', 'none').next('.numbers').css('display', 'none');
+            car.goods = car.goods.filter(ele => ele.id != id)
 
         }
         calcTotal();
         calcNumbers();
         renderCar(car.goods);
+        saveCar();
     });
 
     /* 计算总价  折扣价 */
@@ -112,16 +116,16 @@ $(function () {
         car.goods.forEach(ele => {
             total += ele.discount * ele.numbers
         });
-        car.total = total.toFixed(2);
-        car.discount = total * 0.9.toFixed(2);
+        car.total = Math.round(total * 100) / 100;
+        car.discount = Math.round(total * 100 * 0.9) / 100;
 
         $('.nowprice').text('¥ ' + car.total);
         $('.bfprice').text('¥ ' + car.discount);
 
-        if(car.discount >=20){
+        if (car.discount >= 20) {
             $(".footer-r").text('去支付').addClass('hot');
-        }else{
-            $(".footer-r").text(`还差${20-car.discount}`).removeClass('hot');
+        } else {
+            $(".footer-r").text(`还差${20 - car.discount}`).removeClass('hot');
         }
 
     }
@@ -138,44 +142,90 @@ $(function () {
         if (car.numbers) {
             $('span.nums').css('display', 'block');
             $('.neiceng').addClass('hot');
-            $('.gouwuche').css('background','#f9b626');
+            $('.gouwuche').css('background', '#f9b626');
         } else {
             $('span.nums').css('display', 'none');
             $('.neiceng').removeClass('hot');
-            $('.gouwuche').css('background','rgba(61, 61, 63, 1)');
+            $('.gouwuche').css('background', 'rgba(61, 61, 63, 1)');
         }
     }
 
     /* 结算  */
-    $('.footer').on('click','.footer-r.hot',function(){
-        console.log(1);
+    $('.footer').on('click', '.footer-r.hot', function () {
+        $.ajax({
+            url:'/sdk/index.php/shop/car',
+            type:'POST',
+            data:car,
+            dataType:'json',
+            success:function(res){
+               if(res.code == 1){
+                   location.href = '/sdk/index.php/my?redirect=/shop?sid='+location.search.split('=')[1];
+               }else if(res.code == 2){
+
+               }else if(res.code == 0){
+                   location.href = '/sdk/index.php/'
+               }
+            }
+        })
     });
 
     /* 购物车  */
     let flag = true;
-    $('.tab').css('top',window.innerHeight - $('.manjian').outerHeight() - $('.footer').outerHeight());
+    $('.tab').css('top', window.innerHeight - $('.manjian').outerHeight() - $('.footer').outerHeight());
 
-    $('.footer').on('click','.neiceng.hot',function(){
-        if(flag) {
-            let height = $('.manjian').outerHeight() - $('.tab').outerHeight() ;
+    $('.footer').on('click', '.neiceng.hot', function () {
+        if (flag) {
+            let height = $('.manjian').outerHeight() - $('.tab').outerHeight();
             $('.tab').css('transform', `translate3d(0,${height}px,0)`);
-        }else{
+        } else {
             $('.tab').css('transform', `translate3d(0,0,0)`);
         }
         flag = !flag;
     });
+    /* 购物车加减 */
+    $('.tab').on('click', '.jia', function () {
+        let id = $(this).closest('li').attr('cid');
+        $('#' + id).find('.jia').trigger('click');
+    });
+    /* 清空 */
+    $('.oldchoose:last').on('click', function () {
+        flag = true;
+        $('.tab').css('transform', `translate3d(0,0,0)`);
+        $('.tab').on('webkitTransitionEnd', function () {
+            $(this).off('webkitTransitionEnd');
+            clearCar();
+            cancelCar();
+        })
+    });
 
-   /* 渲染购物车 */
+    /* 清空购物车 */
+    function clearCar() {
+        car.goods = [];
+        car.numbers = 0;
+        car.total = 0;
+        car.discount = 0;
+        $('.lxCar').empty();
+        $('.jian').css('display', 'none');
+        $('.numbers').text(1).css('display', 'none');
+        $('.nums').text(0).css('display', 'none');
+        $('.gouwuche').css('background', 'rgba(61, 61, 63, 1)');
+        $('.neiceng').removeClass('hot');
+        $('.bfprice').text(0);
+        $('.nowprice').text(0);
+        $('.footer-r').removeClass('hot');
+    }
 
-    function renderCar(arr){
+    /* 渲染购物车 */
+
+    function renderCar(arr) {
         let lxCar = $('.lxCar');
         lxCar.empty();
         let html = '';
-        arr.forEach(ele=>{
-            html +=`
-                <li class="lxcarList">
+        arr.forEach(ele => {
+            html += `
+                <li class="lxcarList" cid="${ele.id}">
                 <span class="lxName">${ele.title}</span>
-                <span class="lxPrice">¥ ${ele.discount*ele.numbers}</span>
+                <span class="lxPrice">¥ ${ele.discount * ele.numbers}</span>
                 <span class="lxOpetion">
                     <div class="jiaj">
                         <div class="jian">
@@ -200,7 +250,7 @@ $(function () {
             height += list[i].offsetHeight;
             arr.push(height);
         }
-    };
+    }
 
     /* 渲染 标题  */
     function renderTitle(arr) {
@@ -266,6 +316,21 @@ $(function () {
         return html;
     }
 
+    /* 保存 */
 
+    function saveCar() {
+        localStorage.car = JSON.stringify(car);
+    }
+
+    function cancelCar() {
+        let car = {
+            total: 0,
+            discount: 0,
+            fee: 3,
+            numbers: 0,
+            goods: []
+        };
+        localStorage.car = JSON.stringify(car);
+    }
 });
 
