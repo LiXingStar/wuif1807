@@ -96,7 +96,8 @@ class shop extends main
             if ($db->mysql->affected_rows) {
                 echo json_encode([
                     'code' => 0,
-                    'msg' => '下单成功'
+                    'msg' => '下单成功',
+                    'orderid'=>$oid
                 ]);
             } else {
                 echo json_encode([
@@ -113,4 +114,30 @@ class shop extends main
 
 
     }
+
+    function confirm(){
+        $this->smarty->display('confirm.html');
+    }
+    function orderdetail(){
+        $oid = $_POST['oid'];
+        $db = new DB('orders');
+        $order = $db->where("oid=$oid")->query("*");
+
+
+        $db = new DB('orderextra');
+        $goods = $db->where("oid=$oid")->query("*");
+
+        $sid = $goods[0]['sid'];
+
+        $db = new DB('shop');
+        $shop = $db->where("id=$sid")->query('sname');
+
+        $result = [];
+        $result['shopname'] = $shop[0]['sname'];
+        $result['goods'] = $goods;
+        $result['order'] = $order[0];
+        echo json_encode($result);
+
+    }
+
 }

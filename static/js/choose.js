@@ -163,7 +163,7 @@ $(function () {
                }else if(res.code == 2){
 
                }else if(res.code == 0){
-                   location.href = '/sdk/index.php/'
+                   location.href = '/sdk/index.php/shop/confirm?oid='+res.orderid
                }
             }
         })
