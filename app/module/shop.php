@@ -140,4 +140,8 @@ class shop extends main
 
     }
 
+     function paysuccess(){
+        $this->smarty->display('success.html');
+     }
+
 }

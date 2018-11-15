@@ -1,15 +1,32 @@
 $(function () {
     let oid = location.search.split('=')[1];
+    let total = 0;
     $.ajax({
         url: '/sdk/index.php/shop/orderdetail',
         type: 'POST',
         dataType: 'json',
         data: {oid},
         success: function (res) {
+             total = res.order.discount;
              setshopname(res.shopname);
              rendergoods(res.goods);
              setorder(res.order.discount , res.order.total-res.order.discount);
         }
+    });
+
+    $('.footer-r').on('click',function(){
+        /*$.ajax({
+            url:'/sdk/index.php/shop/pay',
+            type:'post',
+            data:{
+                oid,
+                total
+            },
+            success:function(res){
+                console.log(res);
+            }
+        })*/
+        location.href = `/sdk/index.php/shop/paysuccess?money=${total}&oid=${oid}`;
     });
 
     function setshopname(value) {
